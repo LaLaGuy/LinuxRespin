@@ -1,0 +1,21 @@
+#!/bin/sh
+# postinst script for linux respin
+#
+# see: dh_installdeb(1)
+
+set -e
+
+if [ -f /etc/respin/isolinux/splash.png.saved ]
+then
+mv /etc/respin/isolinux/splash.png.saved /etc/respin/isolinux/splash.png
+fi
+
+
+if [ -f /etc/respin.conf.old ]
+then
+mv /etc/respin.conf.old /etc/respin.conf
+fi
+
+exit 0
+
+
