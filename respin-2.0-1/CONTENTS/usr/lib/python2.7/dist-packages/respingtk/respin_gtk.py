@@ -3,7 +3,7 @@
 
 #Licence: GPLv3.0
 #Copyright: Krasimir S. Stefanov <lokiisyourmaster@gmail.com>
-#Modified by: Tony Brijeski <tb6517@yahoo.com>
+#Modified by: Marcia Wilbur <contact@linuxrespin.org>
 
 try:
     import sys
@@ -28,7 +28,7 @@ except:
     print "Please install all dependencies!"
     sys.exit(1)
 
-APP = "PinguyBuilder-gtk"
+APP = "respin-gtk"
 DIR = "/usr/share/locale"
 APP_VERSION = "4.3-8"
 
@@ -45,7 +45,7 @@ class appgui:
     def __init__(self):
         self.pathname = os.path.dirname(sys.argv[0])
         self.abspath = os.path.abspath(self.pathname)
-        self.gladefile = "/usr/share/PinguyBuilder-gtk/ui/PinguyBuilder-gtk.glade"
+        self.gladefile = "/usr/share/respin-gtk/ui/respin-gtk.glade"
         self.window1 = gtk.glade.XML(self.gladefile,"window1",APP)
         self.working_dir = os.path.expanduser("~")
         self.callback_id = 0
@@ -72,7 +72,7 @@ class appgui:
         self.window1.get_widget("vbox2").add(self.v)
         self.v.show()
         self.load_settings()
-        msg_info(_("It is necessary to close all other windows and unmount any network shares while running PinguyBuilder Backup. Please do so now and then click OK when you are ready to continue."), self.window1.get_widget("window1"))
+        msg_info(_("It is necessary to close all other windows and unmount any network shares while running respin Backup. Please do so now and then click OK when you are ready to continue."), self.window1.get_widget("window1"))
         
     def run_command(self, cmd, done_callback):
         argv = shlex.split(cmd)
@@ -87,14 +87,14 @@ class appgui:
         self.update_conf()
         if not msg_confirm(_("You have selected Backup Mode. Do not interrupt this process. Click OK to Start the Backup LiveCD/DVD process."), self.window1.get_widget("window1")):
             return
-        self.run_command('PinguyBuilder backup', self.on_backup_done)
+        self.run_command('respin backup', self.on_backup_done)
 
     def on_backup_done(self, widget, data = None):
         if self.v.get_child_exit_status() == 0:
             WORKDIR = self.window1.get_widget("entry6").get_text()
             CUSTOMISO = self.window1.get_widget("entry3").get_text()
             msg_info(_("Your %(iso)s and %(iso)s.md5 files are ready in %(dir)s. It is recommended to test it in a virtual machine or on a rewritable cd/dvd to ensure it works as desired. Click on OK to return to the main menu.") 
-                % ({"iso" : CUSTOMISO, "dir" : WORKDIR+'/PinguyBuilder'}), self.window1.get_widget("window1"))
+                % ({"iso" : CUSTOMISO, "dir" : WORKDIR+'/respin'}), self.window1.get_widget("window1"))
         else:
             msg_error(_("The process was interrupted!"), self.window1.get_widget("window1"))
         self.window1.get_widget("notebook1").set_current_page(0)
@@ -104,14 +104,14 @@ class appgui:
         self.update_conf()
         if not msg_confirm(_("You have selected Dist Mode. Click OK to Start the Distributable LiveCD/DVD process."), self.window1.get_widget("window1")):
             return
-        self.run_command('PinguyBuilder dist', self.on_dist_done)
+        self.run_command('respin dist', self.on_dist_done)
 
     def on_dist_done(self, widget, data = None):
         
         if self.v.get_child_exit_status() == 0:
             WORKDIR = self.window1.get_widget("entry6").get_text()
             CUSTOMISO = self.window1.get_widget("entry3").get_text()
-            msg_info(_("Your %(iso)s and %(iso)s.md5 files are ready in %(dir)s. It is recommended to test it in a virtual machine or on a rewritable cd/dvd to ensure it works as desired. Click on OK to return to the main menu.") % ({"iso" : CUSTOMISO, "dir" : WORKDIR+'/PinguyBuilder'}))
+            msg_info(_("Your %(iso)s and %(iso)s.md5 files are ready in %(dir)s. It is recommended to test it in a virtual machine or on a rewritable cd/dvd to ensure it works as desired. Click on OK to return to the main menu.") % ({"iso" : CUSTOMISO, "dir" : WORKDIR+'/respin'}))
         else:
             msg_error(_("The process was interrupted!"), self.window1.get_widget("window1"))
         self.window1.get_widget("notebook1").set_current_page(0)
@@ -121,13 +121,13 @@ class appgui:
         self.update_conf()
         if not msg_confirm(_("You have selected Dist CDFS Mode. Click OK to Start the Distributable LiveCD/DVD filesystem build process.")):
             return
-        self.run_command('PinguyBuilder dist cdfs', self.on_dist_cdfs_done)
+        self.run_command('respin dist cdfs', self.on_dist_cdfs_done)
 
     def on_dist_cdfs_done(self, widget, data = None):
         if self.v.get_child_exit_status() == 0:
             WORKDIR = self.window1.get_widget("entry6").get_text()
             CUSTOMISO = self.window1.get_widget("entry3").get_text()
-            msg_info(_("Your livecd filesystem is ready in %s. You can now add files to the cd and then run the Distiso option when you are done. Click on OK to return to the main menu.") % WORKDIR+'/PinguyBuilder')
+            msg_info(_("Your livecd filesystem is ready in %s. You can now add files to the cd and then run the Distiso option when you are done. Click on OK to return to the main menu.") % WORKDIR+'/respin')
         else:
             msg_error(_("The process was interrupted!"), self.window1.get_widget("window1"))
         self.window1.get_widget("notebook1").set_current_page(0)
@@ -136,11 +136,11 @@ class appgui:
     def on_button4_clicked(self,widget):
         self.update_conf()
         WORKDIR = self.window1.get_widget("entry6").get_text()
-        if os.path.exists(WORKDIR+'/PinguyBuilder/ISOTMP/casper/filesystem.squashfs'):
+        if os.path.exists(WORKDIR+'/respin/ISOTMP/casper/filesystem.squashfs'):
             if not msg_confirm(_("You have selected Dist ISO Mode. Click OK to create the iso file.")):
                 self.window1.get_widget("window1").show()
                 return
-            self.run_command('PinguyBuilder dist iso', self.on_dist_iso_done)
+            self.run_command('respin dist iso', self.on_dist_iso_done)
         else:
             msg_error(_("The livecd filesystem does not exist. Click OK to go back to the main menu and try the normal Dist mode or the Dist CDFS again."))
 
@@ -148,7 +148,7 @@ class appgui:
         if self.v.get_child_exit_status() == 0:
             WORKDIR = self.window1.get_widget("entry6").get_text()
             CUSTOMISO = self.window1.get_widget("entry3").get_text()
-            msg_info(_("Your %(iso)s and %(iso)s.md5 files are ready in %(dir)s. It is recommended to test it in a virtual machine or on a rewritable cd/dvd to ensure it works as desired. Click on OK to return to the main menu.") % ({"iso" : CUSTOMISO, "dir" : WORKDIR+'/PinguyBuilder'}))
+            msg_info(_("Your %(iso)s and %(iso)s.md5 files are ready in %(dir)s. It is recommended to test it in a virtual machine or on a rewritable cd/dvd to ensure it works as desired. Click on OK to return to the main menu.") % ({"iso" : CUSTOMISO, "dir" : WORKDIR+'/respin'}))
         else:
             msg_error(_("The process was interrupted!"), self.window1.get_widget("window1"))
         self.window1.get_widget("notebook1").set_current_page(0)
@@ -158,8 +158,8 @@ class appgui:
         self.update_conf()
         if not msg_confirm(_("This will remove all the files from the temporary directory. Click OK to proceed.")):
             return
-        #os.system('PinguyBuilder clean')
-        self.run_command('PinguyBuilder clean', self.on_clean_done)
+        #os.system('respin clean')
+        self.run_command('respin clean', self.on_clean_done)
         #msg_info(_("Completed. Click OK to return to the main menu."))
 
     def on_clean_done(self, widget, data = None):
@@ -174,19 +174,19 @@ class appgui:
         # show about dialog
         about = gtk.AboutDialog()
         about.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
-        about.set_program_name(_("PinguyBuilder"))
+        about.set_program_name(_("respin"))
         about.set_version(APP_VERSION)
-        about.set_authors([_("Krasimir S. Stefanov <lokiisyourmaster@gmail.com>"),_("Tony Brijeski <tb6517@yahoo.com>"),_("Antoni Norman <antoni.norman@gmail.com>")])
-        about.set_website("http://pinguyos.com/")
+        about.set_authors([_("Krasimir S. Stefanov <lokiisyourmaster@gmail.com>"),_("Marcia Wilbur <contact@linuxrespin.org>"),_("Antoni Norman <antoni.norman@gmail.com>")])
+        about.set_website("http://www.linuxrespin.org")
         translators = [
             _("Bulgarian - Krasimir S. Stefanov <lokiisyourmaster@gmail.com>"),
             _("English - Krasimir S. Stefanov <lokiisyourmaster@gmail.com>"), _("Traditional Chinese - Kent Chang <kentxchang@gmail.com>"), _('Simplified Chinese - Mutse Young <yyhoo2.young@gmail.com>')
         ]
 
         about.set_translator_credits('\n'.join(translators))
-        about.set_logo_icon_name('PinguyBuilder-gtk')
-        license = _('''PyGTK GUI for PinguyBuilder
-Copyright (C) 2011 Krasimir S. Stefanov, Tony Brijeski
+        about.set_logo_icon_name('respin-gtk')
+        license = _('''PyGTK GUI for respin
+Copyright (C) 2018 Krasimir S. Stefanov, Tony Brijeski, Marcia Wilbur
 Licence: GPLv3.0
 http://www.gnu.org/licenses/.''')
         about.set_license(license)
@@ -228,9 +228,9 @@ http://www.gnu.org/licenses/.''')
             filename = dialog.get_filename()
             dialog.destroy()  
             self.working_dir = os.path.dirname(filename)
-            shutil.move("/etc/PinguyBuilder/isolinux/splash.png", "/etc/PinguyBuilder/isolinux/splash.png." + now.strftime("%Y%m%d%H%M%S"))
-            shutil.copy(filename, "/etc/PinguyBuilder/isolinux/splash.png")
-            msg_info(_("%s has been copied to /etc/PinguyBuilder/isolinux/splash.png becoming the default background for the LIVE menu.") % filename)
+            shutil.move("/etc/respin/isolinux/splash.png", "/etc/respin/isolinux/splash.png." + now.strftime("%Y%m%d%H%M%S"))
+            shutil.copy(filename, "/etc/respin/isolinux/splash.png")
+            msg_info(_("%s has been copied to /etc/respin/isolinux/splash.png becoming the default background for the LIVE menu.") % filename)
         else:
             dialog.destroy()                  
 
@@ -245,12 +245,12 @@ http://www.gnu.org/licenses/.''')
             filename = dialog.get_filename()
             self.working_dir = os.path.dirname(filename)
             name, ext = os.path.splitext(filename)
-            grub_bg = "/etc/PinguyBuilder/grub" + ext
+            grub_bg = "/etc/respin/grub" + ext
             shutil.copy(filename, grub_bg)
             dialog.destroy()
             
             
-            grub = open('/etc/PinguyBuilder/grub.ucf-dist').read()
+            grub = open('/etc/respin/grub.ucf-dist').read()
             
             m = re.search('(#?)GRUB_BACKGROUND=.*', grub)
             if m != None:
@@ -258,7 +258,7 @@ http://www.gnu.org/licenses/.''')
             else:
                 grub += '\nGRUB_BACKGROUND="%s"' % grub_bg
             
-            f = open('/etc/PinguyBuilder/grub.ucf-dist', 'w+')
+            f = open('/etc/respin/grub.ucf-dist', 'w+')
             f.write(grub)
             f.close()
             
@@ -290,7 +290,7 @@ http://www.gnu.org/licenses/.''')
             username = model.get(treeiter, 0)[0]
             ns.window.get_widget("progressbar1").show()
             ns.window.get_widget("hbuttonbox1").set_sensitive(False)
-            process = subprocess.Popen(['PinguyBuilder-skelcopy', username], stdout=subprocess.PIPE, stderr=None)
+            process = subprocess.Popen(['respin-skelcopy', username], stdout=subprocess.PIPE, stderr=None)
             while process.poll() == None:
                 while gtk.events_pending():
                     gtk.main_iteration_do()
@@ -380,7 +380,7 @@ http://www.gnu.org/licenses/.''')
             self.window1.get_widget("window1").show()
             
         def create(widget, other = None):
-            theme_name = msg_input('', _('Enter your plymouth theme name. eg. PinguyBuilder Theme (please use only alphanumeric characters)'), _('Name:'), 'PinguyBuilder Theme')          
+            theme_name = msg_input('', _('Enter your plymouth theme name. eg. respin Theme (please use only alphanumeric characters)'), _('Name:'), 'respin Theme')          
             if theme_name == False or theme_name == None:
                 return
             elif theme_name == '':
@@ -423,14 +423,14 @@ http://www.gnu.org/licenses/.''')
                 now = datetime.datetime.now()
                 theme_pic = os.path.join(theme_dir, os.path.basename(filename))
                 shutil.copy(filename, theme_pic)
-                shutil.copy('/etc/PinguyBuilder/plymouth/PinguyBuilder-theme/progress_bar.png', theme_dir+'/progress_bar.png')
-                shutil.copy('/etc/PinguyBuilder/plymouth/PinguyBuilder-theme/progress_box.png', theme_dir+'/progress_box.png')
+                shutil.copy('/etc/respin/plymouth/respin-theme/progress_bar.png', theme_dir+'/progress_bar.png')
+                shutil.copy('/etc/respin/plymouth/respin-theme/progress_box.png', theme_dir+'/progress_box.png')
                 script_name = "/lib/plymouth/themes/"+theme_name_fixed+"/"+theme_name_fixed+".script"
-                script = open("/etc/PinguyBuilder/plymouth/PinguyBuilder-theme/PinguyBuilder-theme.script").read().replace("__THEMEPIC__", os.path.basename(theme_pic))
+                script = open("/etc/respin/plymouth/respin-theme/respin-theme.script").read().replace("__THEMEPIC__", os.path.basename(theme_pic))
                 open(script_name, 'w+').write(script)
                 
                 config_name = "/lib/plymouth/themes/"+theme_name_fixed+"/"+theme_name_fixed+".plymouth"
-                config = open("/etc/PinguyBuilder/plymouth/PinguyBuilder-theme/PinguyBuilder-theme.plymouth").read()
+                config = open("/etc/respin/plymouth/respin-theme/respin-theme.plymouth").read()
                 config = config.replace("__THEMENAME__", theme_name)
                 config = config.replace("__THEMEDIR__", theme_name_fixed)
                 open(config_name, 'w+').write(config)
@@ -565,7 +565,7 @@ http://www.gnu.org/licenses/.''')
         exit(0)
         
     def load_settings(self):
-        config_f = open("/etc/PinguyBuilder.conf")
+        config_f = open("/etc/respin.conf")
         config_txt = config_f.read()
         config_f.close()
         
@@ -582,7 +582,7 @@ http://www.gnu.org/licenses/.''')
             self.getvalue('EXCLUDES', config_txt, ''))
     
         self.window1.get_widget("entry5").set_text(
-            self.getvalue('LIVECDURL', config_txt, 'http://pinguyos.com'))
+            self.getvalue('LIVECDURL', config_txt, 'http://www.linuxrespin.org'))
 
         self.window1.get_widget("entry7").set_text(
             self.getvalue('SQUASHFSOPTS', config_txt, '-no-recovery -always-use-fragments -b 1M -no-duplicates'))
@@ -590,7 +590,7 @@ http://www.gnu.org/licenses/.''')
         self.window1.get_widget("checkbutton1").set_active(
             self.getvalue('BACKUPSHOWINSTALL', config_txt, '1') == '1')
         
-        workdir = self.getvalue('WORKDIR', config_txt, '/home/PinguyBuilder')
+        workdir = self.getvalue('WORKDIR', config_txt, '/home/respin')
         if not os.path.exists(workdir):
             os.makedirs(workdir)
         self.window1.get_widget("entry6").set_text(workdir)
@@ -605,7 +605,7 @@ http://www.gnu.org/licenses/.''')
             BACKUPSHOWINSTALL = '0'
             
         conf_content = '''
-#PinguyBuilder Global Configuration File
+#respin Global Configuration File
 
 
 # This is the temporary working directory and won't be included on the cd/dvd
@@ -649,7 +649,7 @@ LIVECDURL="%(LIVECDURL)s"
         "LIVECDURL" : self.window1.get_widget("entry5").get_text()
         })
         
-        conf = open('/etc/PinguyBuilder.conf', 'w+')
+        conf = open('/etc/respin.conf', 'w+')
         conf.write(conf_content)
         conf.close()
         
@@ -739,16 +739,16 @@ class Namespace: pass
 if os.popen('whoami').read().strip() != 'root':
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
     if os.system('which gksu')==0:
-        if os.path.exists('/usr/share/applications/PinguyBuilder-gtk.desktop'):
-            os.system('gksu -D "%s" python ./PinguyBuilder_gtk.py' % _('PinguyBuilder'))
+        if os.path.exists('/usr/share/applications/respin-gtk.desktop'):
+            os.system('gksu -D "%s" python ./respin_gtk.py' % _('respin'))
         else:
-            os.system('gksu -D "%s" python ./PinguyBuilder_gtk.py' % '/usr/share/applications/PinguyBuilder-gtk.desktop')
+            os.system('gksu -D "%s" python ./respin_gtk.py' % '/usr/share/applications/respin-gtk.desktop')
     elif os.system('which kdesudo')==0:
-        os.system('kdesudo ./PinguyBuilder_gtk.py' )
+        os.system('kdesudo ./respin_gtk.py' )
     elif os.system('which sudo')==0:
         password = msg_input(_(''), _('Enter your password to perform administrative tasks'), 'Password:', '', None, True)
         if password:
-            os.popen('sudo -S python ./PinguyBuilder_gtk.py','w').write(password)
+            os.popen('sudo -S python ./respin_gtk.py','w').write(password)
 else:
     if __name__ == '__main__':
         app = appgui()

@@ -5,10 +5,12 @@ This tool is used to backup your image, create distributions, create live cd/dvd
 install respin
 
 If you are using Ubuntu - Consider switching to Debian.
-This is NOT for Ubuntu.
+This is NOT officially for Ubuntu.
 Debian.
-In the past, Ubuntu packages, dependency information and such was available. Thanks to a few choice words by some Ubuntu users, that changed on July 25, 2017!
-Thank you.
+
+In the past, Ubuntu packages, dependency information and such was available.
+Since Ubuntu development has halted for the time being, I will make some updates to *buntu version temporarily... 
+Please do not request a server edition ;P just ludicrous. Remember, I am a humanoid. 1 humanoid.
 
 Respin
 
