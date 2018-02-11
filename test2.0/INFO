@@ -1,0 +1,17 @@
+ new debian package, version 2.0.
+ size 4576544 bytes: control archive=908 bytes.
+     761 bytes,    10 lines   *  control              
+     344 bytes,    21 lines   *  postinst             #!/bin/sh
+     109 bytes,    12 lines   *  postrm               #!/bin/sh
+     392 bytes,    27 lines   *  preinst              #!/bin/sh
+     108 bytes,    12 lines   *  prerm                #!/bin/sh
+ Package: respin
+ Version: 2.0-1
+ Architecture: all
+ Maintainer: Marcia Wilbur <admin@gnulinux.io>
+ Section: utils
+ Priority: optional
+ Depends: memtest86+, coreutils, dialog, mkisofs | genisoimage, findutils, bash, passwd, sed, squashfs-tools, casper, rsync, mount, eject, libdebian-installer4, os-prober, ubiquity-frontend-debconf, user-setup, discover1 | discover, laptop-detect, syslinux, syslinux-common, util-linux, aufs-tools | unionfs-fuse, dpkg-dev, gksu, python (>= 2.7), python (<< 2.8), python:any (>= 2.7.1-0ubuntu2), python-glade2, python-vte, plymouth-x11
+ Description: This script creates a livecd of the installed system and works with *buntu systems.
+  You can either make a distributable livecd or a backup of your system.
+ Installed-Size: 11752
