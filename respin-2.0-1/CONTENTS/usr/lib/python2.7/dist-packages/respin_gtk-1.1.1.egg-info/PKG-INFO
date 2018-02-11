@@ -1,0 +1,10 @@
+Metadata-Version: 1.1
+Name: respin-gtk
+Version: 1.1-1
+Summary: Ubuntu and variant system remaster. This is the alternate gtk gui for respin written in pygtk.
+Home-page: http://www.linuxrespin.org
+Author: Tony Marcia
+Author-email: contact@linuxrespin.org
+License: GNU GPL
+Description: UNKNOWN
+Platform: linux

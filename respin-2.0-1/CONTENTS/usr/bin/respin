@@ -8,7 +8,7 @@ if [ "$(whoami)" != "root" ]; then
     exit 1
 fi
 
-#create respin-firstboot script if it doesn't exist and populate with at least removal of the ubiquity*.desktop file from users Desktop and fix for recovery mode
+#create resin-firstboot script if it doesn't exist and populate with at least removal of the ubiquity*.desktop file from users Desktop and fix for recovery mode
 fbtest=`grep "REM302" /etc/init.d/respin-firstboot`
 
 if [ "$fbtest" = "" ]; then
@@ -31,7 +31,7 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin
 do_start() {
         #REM302
         if [ "\`cat /proc/cmdline | grep casper\`" = "" ]; then
-            [ "\$VERBOSE" != no ] && log_begin_msg "Running respin-firstboot"
+            [ "\$VERBOSE" != no ] && log_begin_msg "respin-firstboot"
             (sleep 60 && update-rc.d -f respin-firstboot remove) &
             sed -i -e 's/root:x:/root:!:/g' /etc/shadow
             rm -rf /home/*/Desktop/ubiquity*.desktop
@@ -106,7 +106,7 @@ fi
 
 touch $WORKDIR/respin.log
 
-#added log_msg to reduce size. code provided by Ivailo (a.k.a. SmiL3y) 
+#added log_msg to reduce size.  
 log_msg() {
     echo "$1"
     echo "$1" >>$WORKDIR/respin.log
@@ -174,20 +174,23 @@ case $1  in
         echo "   sudo respin backup|clean|dist [cdfs|iso] [filename.iso]"
         echo " "
         echo " "
-        echo "Respin cli examples:"
+        echo "Examples:"
         echo " "
-        echo "   sudo respin backup - make a livecd/dvd backup of your system"
+        echo "   sudo respin backup       (to make a livecd/dvd backup of your system)"
         echo " "
-        echo "   sudo respin backup custom.iso - make a livecd/dvd backup and call the iso custom.iso" 
+        echo "   sudo respin backup custom.iso"
+        echo "                            (to make a livecd/dvd backup and call the iso custom.iso)" 
         echo " "
-        echo "   sudo respin clean - clean up temporary files of respin"
+        echo "   sudo respin clean        (to clean up temporary files of respin)"
         echo " "
-        echo "   sudo respin dist - make a distributable livecd/dvd of your system"
+        echo "   sudo respin dist         (to make a distributable livecd/dvd of your system)"
         echo " "
-        echo "   sudo respin dist cdfs - make a distributable livecd/dvd filesystem only"
+        echo "   sudo respin dist cdfs"
+        echo "                            (to make a distributable livecd/dvd filesystem only)"
         echo " "
-        echo "   sudo respin dist iso custom.iso - make a distributable iso named custom.iso but only"
-        echo "                              if the cdfs is already present"
+        echo "   sudo respin dist iso custom.iso"
+        echo "                             (to make a distributable iso named custom.iso but only"
+        echo "                              if the cdfs is already present)"
         echo " "
         echo "   cdfs and iso options should only be used if you wish to modify something on the"
         echo "   cd before the iso is created.  An example of this would be to modify the isolinux"
@@ -676,7 +679,7 @@ FOO
     echo "------------------------------------------------------" >>$WORKDIR/respin.log
     echo "/etc/X11/default-display-manager info" >>$WORKDIR/respin.log
     cat $WORKDIR/dummysys/etc/X11/default-display-manager >>$WORKDIR/respin.log
-    echo "------------------------------------------------------" >>$WORKDIR/respin.log
+    echo "------------------------------------------------------" >>$WORKDIR/Pilder.log
     echo "/etc/skel info" >>$WORKDIR/respin.log
     find /etc/skel >>$WORKDIR/respin.log
     echo "------------------------------------------------------" >>$WORKDIR/respin.log

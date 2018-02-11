@@ -1,16 +1,16 @@
- Respin
+respin
 
 - a script to create a livecd/dvd from a working Ubuntu or variant install
 
-For more information, please visit http://www.linuxrespin.org
+For more information, please visit http://www.linuxrespin.org and remastersys.org
 
 
-Limitations of remastering
-========================== 
+Original Notes from Tony - Limitations of remastering
+===================================================== 
 
 Due to some common questions I keep getting asked repeatedly I have put the answers here.
 
-There are some limitations for remastering right now and they have absolutely nothing to do with respin itlself.
+There are some limitations for remastering right now and they have absolutely nothing to do with Remastersys itself.
 
 1 - Nvidia and ATI proprietary drivers are disabled at the kernel level by ubuntu's casper scripts - no workaround
 
@@ -52,7 +52,7 @@ livecd/run the livecd/install the livecd.
 
 These may change in the future if Ubuntu changes them but for now they are the limitations and there are no workarounds.
 
-respin simply builds the livecd from the system you are running.  If you have it setup correctly and
+Remastersys simply builds the livecd from the system you are running.  If you have it setup correctly and
 nothing conflicts with Ubuntu's casper or ubiquity then it should build, run and install just fine.
 
  

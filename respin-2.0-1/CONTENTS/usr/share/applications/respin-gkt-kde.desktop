@@ -8,5 +8,5 @@ Icon=respin-gtk
 Terminal=false
 Type=Application
 Categories=System;Settings;
+GenericName[en_CA]=System Backup
 OnlyShowIn=KDE;
-Name[en_US]=respin

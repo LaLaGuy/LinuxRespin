@@ -4,7 +4,7 @@ ChangeLog
 MANIFEST.in
 NEWS
 README
-PinguyBuilder-gtk
+respin-gtk
 setup.cfg
 setup.py
 data/respin-gtk-kde.desktop
