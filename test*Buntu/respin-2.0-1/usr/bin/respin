@@ -8,7 +8,7 @@ if [ "$(whoami)" != "root" ]; then
     exit 1
 fi
 
-#create resin-firstboot script if it doesn't exist and populate with at least removal of the ubiquity*.desktop file from users Desktop and fix for recovery mode
+#create respin-firstboot script if it doesn't exist and populate with at least removal of the ubiquity*.desktop file from users Desktop and fix for recovery mode
 fbtest=`grep "REM302" /etc/init.d/respin-firstboot`
 
 if [ "$fbtest" = "" ]; then
@@ -39,17 +39,17 @@ do_start() {
             tar -xf /root/apt.tar.gz -C /
             rm -rf /root/apt.tar.gz
             #Place your custom commands below this line
-            
+
             #Place your custom commands above this line
             ES=\$?
             [ "\$VERBOSE" != no ] && log_end_msg \$ES
             return \$ES
         fi
 
-        
 
 
-} 
+
+}
 
 case "\$1" in
     start)
@@ -72,14 +72,14 @@ FOO
 fi
 
 
-# load the respin.conf file 
+# load the respin.conf file
 . /etc/respin.conf
 
 # if the respin.conf file is incorrect or missing, make sure to set defaults
 
 if [ "$LIVEUSER" = "" ]; then
     #Somebody must have removed the username from the configuration file
-    echo 
+    echo
     #this is a custom live user
     LIVEUSER="custom"
 fi
@@ -106,7 +106,7 @@ fi
 
 touch $WORKDIR/respin.log
 
-#added log_msg to reduce size.  
+#added log_msg to reduce size.
 log_msg() {
     echo "$1"
     echo "$1" >>$WORKDIR/respin.log
@@ -179,7 +179,7 @@ case $1  in
         echo "   sudo respin backup       (to make a livecd/dvd backup of your system)"
         echo " "
         echo "   sudo respin backup custom.iso"
-        echo "                            (to make a livecd/dvd backup and call the iso custom.iso)" 
+        echo "                            (to make a livecd/dvd backup and call the iso custom.iso)"
         echo " "
         echo "   sudo respin clean        (to clean up temporary files of respin)"
         echo " "
@@ -419,7 +419,7 @@ log_msg "$WORKDIR is on a $DIRTYPE filesystem"
     # make sure the adduser and autologin functions of casper as set according to the mode
     log_msg "Making sure adduser and autologin functions of casper are set properly"
     [ "$1" = "dist" ] && [ ! -d $WORKDIR/dummysys/home ] && mkdir $WORKDIR/dummysys/home
-    [ "$1" = "dist" ] && chmod 755 /usr/share/initramfs-tools/scripts/casper-bottom/*adduser /usr/share/initramfs-tools/scripts/casper-bottom/*autologin 
+    [ "$1" = "dist" ] && chmod 755 /usr/share/initramfs-tools/scripts/casper-bottom/*adduser /usr/share/initramfs-tools/scripts/casper-bottom/*autologin
     [ "$1" = "backup" ] && [ -d $WORKDIR/dummysys/home ] && rm -rf $WORKDIR/dummysys/home
     [ "$1" = "backup" ] && chmod 644 /usr/share/initramfs-tools/scripts/casper-bottom/*adduser /usr/share/initramfs-tools/scripts/casper-bottom/*autologin
 
@@ -442,7 +442,7 @@ log_msg "$WORKDIR is on a $DIRTYPE filesystem"
 
     #Downloading packages for offline install
     log_msg "Downloading packages for CD"
-    
+
     # Check Architecture
     ARCH=`archdetect | awk -F "/" '{print $1}'`
 
@@ -457,7 +457,7 @@ log_msg "$WORKDIR is on a $DIRTYPE filesystem"
      cd $WORKDIR/ISOTMP/
     dpkg-scanpackages pool /dev/null | gzip -9c > dists/Packages.gz
 
-    # check and see if they have a custom isolinux already setup. eg. they copied over 
+    # check and see if they have a custom isolinux already setup. eg. they copied over
     # the isolinux folder from their original livecd or made a custom one for their distro
 
     if [ ! -f /etc/respin/customisolinux/isolinux.cfg ]; then
@@ -465,7 +465,7 @@ log_msg "$WORKDIR is on a $DIRTYPE filesystem"
         find /usr -name 'isolinux.bin' -exec cp {} $WORKDIR/ISOTMP/isolinux/ \;
         #find fix for vesamenu.32 provided by Krasimir S. Stefanov <lokiisyourmaster@gmail.com>
         VESAMENU=`find /usr -print0 | grep -FzZ "bios/vesamenu.c32"`
-        cp $VESAMENU $WORKDIR/ISOTMP/isolinux/ 
+        cp $VESAMENU $WORKDIR/ISOTMP/isolinux/
         LDLINUX=`find /usr -print0 | grep -FzZ "bios/ldlinux.c32"`
         cp $LDLINUX $WORKDIR/ISOTMP/isolinux/
         LIBUTIL=`find /usr -print0 | grep -FzZ "bios/libutil.c32"`
@@ -714,7 +714,7 @@ FOO
 
     sleep 1
 
-    #checking the size of the compressed filesystem to ensure it meets the iso9660 spec for a single file" 
+    #checking the size of the compressed filesystem to ensure it meets the iso9660 spec for a single file"
     SQUASHFSSIZE=`ls -s $WORKDIR/ISOTMP/casper/filesystem.squashfs | awk -F " " '{print $1}'`
     if [ "$SQUASHFSSIZE" -gt "3999999" ]; then
         log_msg "The compressed filesystem is larger than genisoimage allows for a single file. You must try to reduce the amount of data you are backing up and try again."
@@ -788,7 +788,7 @@ iso (){
         log_msg "The iso was not created. There was a problem. Exiting"
         exit 1
     fi
-    
+
     # Make the iso hybrid so it can be simply dd copied to a usb flash drive.
     log_msg "Making $CUSTOMISO a hybrid iso"
     isohybrid --uefi $WORKDIR/$CUSTOMISO
