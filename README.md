@@ -8,9 +8,9 @@ If you are using Ubuntu - Consider switching to Debian.
 This is NOT officially for Ubuntu.
 Debian.
 
-In the past, Ubuntu packages, dependency information and such was available.
-Since Ubuntu development has halted for the time being, I will make some updates to *buntu version temporarily... 
-Please do not request a server edition ;P just ludicrous. Remember, I am a humanoid. 1 humanoid.
+We have an Ubuntu GUI version now. Thank you to the members of the Ubuntu Community for working with us!!!
+We were also featured in LinuxJournal!
+http://www.linuxjournal.com/content/5-minute-foss-spinning-custom-linux-distribution
 
 Respin
 
