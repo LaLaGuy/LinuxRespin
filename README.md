@@ -35,16 +35,19 @@ Then, the respin project was featured in LinuxJournal and Antoni (Pinguy) contac
 
 To Tony - I see why you would abandon this project. It's an important one but comes with a lot of demands, especially maintaining Deb and Ub versions.
 
-To Antoi - I can see why you are disappointed that your product was not featured but mine was. However, your history in the Linux community labled you as - a DMCA lover not a fighter. Simply stated, you do not seem very community minded.
+To Antoni - I can see why you are disappointed that your product was not featured but mine was. However, your history in the Linux community labled you as - a DMCA lover not a fighter. Simply stated, you do not seem very community minded.
+see also:
+https://www.techdirt.com/articles/20150111/10420429671/linux-developer-who-issued-bogus-youtube-takedowns-threatens-techdirt-with-legal-action-publishing-his-private-information.shtml#comments
 
-To the users of Respin or Pinguy - I'm sorry if you think there is some violation or issue here. The drama is not going to affect our future releases. 
+To the users of Respin or Pinguy - I'm sorry if you think there is some violation or issue here. The drama is not going to effect our future releases. 
 
-Some changes have been pushed and the source for 2.0-2 is available. 
+Some changes have been pushed and the source for 2.0-2 is available in that dev branch.
 
 If you have any questions, please contact us at:
 Contact at linuxrespin.org
 
-Again, I apologize to anyone who felt unduly unrecognized or violated. However, as far as I can tell, I did distinguish respin from pinguy and I even told Antoni, his code was good... that's a compliment.
+Again, I apologize to anyone who felt unduly unrecognized or violated. 
+However, as far as I can tell, I did distinguish respin from pinguy and I even told Antoni, his code was good... that's a compliment.
 
 
 Respin
