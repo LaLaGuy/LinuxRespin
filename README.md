@@ -53,7 +53,10 @@ Again, I apologize to anyone who felt unduly unrecognized or violated.
 However, as far as I can tell, I did distinguish respin from pinguy and I even told Antoni, his code was good... that's a compliment.
 
 I'm a copier. It's true. 
+
 -aicra
+
+Note: Please fork and copy the GPL'd code in any of my repos - That's what it's there for! COPY!!!!!
 
 Respin
 
