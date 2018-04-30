@@ -5,12 +5,47 @@ This tool is used to backup your image, create distributions, create live cd/dvd
 install respin
 
 If you are using Ubuntu - Consider switching to Debian.
-This is NOT officially for Ubuntu.
+This is NOT officially for Ubuntu. 
 Debian.
 
 We have an Ubuntu GUI version now. Thank you to the members of the Ubuntu Community for working with us!!!
 We were also featured in LinuxJournal!
 http://www.linuxjournal.com/content/5-minute-foss-spinning-custom-linux-distribution
+
+A Note about PinguyOS:
+Here's the real deal: in 2014 we worked with Tony Brijeski (aka Fragadelic) on the fork - Respin. We had Ubuntu Developers and Debian Developers. Tony worked with us to get the original code and GTK and GUI versions for Ubuntu and Debian respectively.
+
+The group lost speed and focused on their lives, careers and the Ubuntu version was stale. I will always give credit to Antoni Norman, aka Pinguy for the code in release 2.0-1 - Ubuntu. Ubuntu users were demanding an Ubuntu version. In fact, I did receive a threat from one person and multiple demands. I am not an Ubuntu developer. In fact, the only thing I ever created Ubuntu based is:
+FixedUbuntu Opty Out for 14.04 - the Sassy Spyware version that did not have an easy option to opt out of spyware.
+
+I saw Pinguy's fork and someone on his forum posted about a Debian version.
+
+Since I had a Debian Version, he had Ubuntu, I thought maybe we could work together but he seemed... less than community minded and unwilling to work with me. 
+
+He told me, "that's not how open source works". 
+
+Really?
+hahaha
+
+So, I was going to use the code for reference following the GPL requirements to ensure no one was confused with respin and his Pinguy (incidentally his includes the original remastersys logos... which is a violation). 
+
+I made some small changes to the source. Other users on github made changes to pinguy - changing the name pinguyOS etc and so, I pushed the changes from the test code I was only evaluating but - because of community - I wrapped up and pushed and packaged out.
+
+Then, the respin project was featured in LinuxJournal and Antoni (Pinguy) contacted us through the website contact form. Yes. I give him credit for the code changes and EFI support. At no time would I say I made those changes. The trail is available in this repo. The source is GPL and we followed the GPL requirements for distribution and modification. 
+
+To Tony - I see why you would abandon this project. It's an important one but comes with a lot of demands, especially maintaining Deb and Ub versions.
+
+To Antoi - I can see why you are disappointed that your product was not featured but mine was. However, your history in the Linux community labled you as - a DMCA lover not a fighter. Simply stated, you do not seem very community minded.
+
+To the users of Respin or Pinguy - I'm sorry if you think there is some violation or issue here. The drama is not going to affect our future releases. 
+
+Some changes have been pushed and the source for 2.0-2 is available. 
+
+If you have any questions, please contact us at:
+Contact at linuxrespin.org
+
+Again, I apologize to anyone who felt unduly unrecognized or violated. However, as far as I can tell, I did distinguish respin from pinguy and I even told Antoni, his code was good... that's a compliment.
+
 
 Respin
 
