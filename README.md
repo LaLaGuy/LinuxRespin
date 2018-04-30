@@ -9,7 +9,7 @@ This is NOT officially for Ubuntu.
 Debian.
 
 We have an Ubuntu GUI version now. Thank you to the members of the Ubuntu Community for working with us!!!
-We were also featured in LinuxJournal!
+<b>We were also featured in LinuxJournal! </b>
 http://www.linuxjournal.com/content/5-minute-foss-spinning-custom-linux-distribution
 
 A Note about PinguyOS:
