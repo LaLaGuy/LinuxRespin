@@ -35,7 +35,8 @@ Then, the respin project was featured in LinuxJournal and Antoni (Pinguy) contac
 
 To Tony - I see why you would abandon this project. It's an important one but comes with a lot of demands, especially maintaining Deb and Ub versions.
 
-To Antoni - I can see why you are disappointed that your product was not featured but mine was. However, your history in the Linux community labled you as - a DMCA lover not a fighter. Simply stated, you do not seem very community minded.
+To Antoni - I can see why you are disappointed that your product PinguyBuilder was not featured but Respin was. I'm not sure why. Maybe because we offer a Debian and Ubuntu and Mint and Trisquel and other flavor versions. However, your history in the Linux community labled you as - a DMCA lover not a fighter. Simply stated, you do not seem very community minded. 
+
 see also:
 
 <b>Linux Developer Who Issued Bogus YouTube Takedowns Threatens Techdirt With Legal Action For Publishing His 'Private Information'</b>
