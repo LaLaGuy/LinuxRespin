@@ -39,7 +39,7 @@ To Antoni - I can see why you are disappointed that your product was not feature
 see also:
 
 <b>Linux Developer Who Issued Bogus YouTube Takedowns Threatens Techdirt With Legal Action For Publishing His 'Private Information'</b>
-https://www.techdirt.com/articles/20150111/10420429671/linux-developer-who-issued-bogus-youtube-takedowns-threatens-techdirt-with-legal-action-publishing-his-private-information.shtml#comments
+https://www.techdirt.com/articles/20150111/10420429671/linux-developer-who-issued-bogus-youtube-takedowns-threatens-techdirt-with-legal-action-publishing-his-private-information.shtml
 
 To the users of Respin or Pinguy - I'm sorry if you think there is some violation or issue here. The drama is not going to effect our future releases. 
 
