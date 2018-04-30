@@ -1,0 +1,27 @@
+#!/bin/sh
+# preinst script for respin
+#
+# see: dh_installdeb(1)
+
+set -e
+
+if [ -d /respin ]
+then
+mv /respin /home
+fi
+
+if [ -f /etc/respin.conf ]
+then
+mv /etc/respin.conf /etc/respin.conf.old
+fi
+
+if [ -f /etc/respin/isolinux/splash.png ]
+then
+mv /etc/respin/isolinux/splash.png /etc/respin/isolinux/splash.png.saved
+fi
+
+
+
+exit 0
+
+

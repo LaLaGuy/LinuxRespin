@@ -1,0 +1,12 @@
+#!/bin/sh
+# postrm script for respin
+#
+# see: dh_installdeb(1)
+
+set -e
+
+#nada
+
+exit 0
+
+
