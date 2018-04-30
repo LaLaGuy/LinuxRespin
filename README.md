@@ -12,7 +12,7 @@ We have an Ubuntu GUI version now. Thank you to the members of the Ubuntu Commun
 <b>We were also featured in LinuxJournal! </b>
 http://www.linuxjournal.com/content/5-minute-foss-spinning-custom-linux-distribution
 
-A Note about PinguyOS:
+<b>A Note about PinguyOS and the modified version we use:</b>
 Here's the real deal: in 2014 we worked with Tony Brijeski (aka Fragadelic) on the fork - Respin. We had Ubuntu Developers and Debian Developers. Tony worked with us to get the original code and GTK and GUI versions for Ubuntu and Debian respectively.
 
 The group lost speed and focused on their lives, careers and the Ubuntu version was stale. I will always give credit to Antoni Norman, aka Pinguy for the code in release 2.0-1 - Ubuntu. Ubuntu users were demanding an Ubuntu version. In fact, I did receive a threat from one person and multiple demands. I am not an Ubuntu developer. In fact, the only thing I ever created Ubuntu based is:
@@ -36,7 +36,7 @@ Then, the respin project was featured in LinuxJournal and Antoni (Pinguy) contac
 To Tony - I see why you would abandon this project. It's an important one but comes with a lot of demands, especially maintaining Deb and Ub versions.
 
 To Antoni - I can see why you are disappointed that your product was not featured but mine was. However, your history in the Linux community labled you as - a DMCA lover not a fighter. Simply stated, you do not seem very community minded.
-see also:
+see also:Linux Developer Who Issued Bogus YouTube Takedowns Threatens Techdirt With Legal Action For Publishing His 'Private Information'
 https://www.techdirt.com/articles/20150111/10420429671/linux-developer-who-issued-bogus-youtube-takedowns-threatens-techdirt-with-legal-action-publishing-his-private-information.shtml#comments
 
 To the users of Respin or Pinguy - I'm sorry if you think there is some violation or issue here. The drama is not going to effect our future releases. 
