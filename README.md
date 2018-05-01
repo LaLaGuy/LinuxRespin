@@ -8,14 +8,18 @@ If you are using Ubuntu - Consider switching to Debian.
 This is NOT officially for Ubuntu. 
 Debian.
 
-We have an Ubuntu GUI version now. Thank you to the members of the Ubuntu Community for working with us!!!
+We have an Ubuntu GTK version now.
+Thank you to the members of the Ubuntu Community for working with us!!!
+
 <b>We were also featured in LinuxJournal! </b>
 http://www.linuxjournal.com/content/5-minute-foss-spinning-custom-linux-distribution
+
+Awesome everyone!
 
 <b>A Note about PinguyOS and the modified version we use:</b>
 Here's the real deal: in 2014 we worked with Tony Brijeski (aka Fragadelic) on the fork - Respin. We had Ubuntu Developers and Debian Developers. Tony worked with us to get the original code and GTK and GUI versions for Ubuntu and Debian respectively.
 
-The group lost speed and focused on their lives, careers and the Ubuntu version was stale. I will always give credit to Antoni Norman, aka Pinguy for the code in release 2.0-1 - Ubuntu. Ubuntu users were demanding an Ubuntu version. In fact, I did receive a threat from one person and multiple demands. I am not an Ubuntu developer. In fact, the only thing I ever created Ubuntu based is:
+The group lost speed and focused on their lives, careers and the Ubuntu version was stale. I will always give credit to Antoni Norman, aka Pinguy for the portion of his code that is included in BohdiBuilder code in release 2.0-1 - Ubuntu. Ubuntu users were demanding an Ubuntu version. In fact, I did receive a threat from one person and multiple demands. I am not an Ubuntu developer. In fact, the only thing I ever created Ubuntu based is:
 FixedUbuntu Opty Out for 14.04 - the Sassy Spyware version that did not have an easy option to opt out of spyware.
 
 I saw Pinguy's fork and someone on his forum posted about a Debian version.
@@ -28,6 +32,7 @@ Really?
 hahaha
 
 So, I was going to use the code for reference following the GPL requirements to ensure no one was confused with respin and his Pinguy (incidentally his includes the original remastersys logos... which is a violation). 
+Then, it came to our attention the xz, UEFI support came from BohdiBuilder! :o
 
 I made some small changes to the source. Other users on github made changes to pinguy - changing the name pinguyOS etc and so, I pushed the changes from the test code I was only evaluating but - because of community - I wrapped up and pushed and packaged out.
 
