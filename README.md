@@ -16,46 +16,18 @@ http://www.linuxjournal.com/content/5-minute-foss-spinning-custom-linux-distribu
 
 Awesome everyone!
 
-<b>A Note about PinguyOS and the modified version we use:</b>
+<b>A Note about the modified version we use:</b>
 Here's the real deal: in 2014 we worked with Tony Brijeski (aka Fragadelic) on the fork - Respin. We had Ubuntu Developers and Debian Developers. Tony worked with us to get the original code and GTK and GUI versions for Ubuntu and Debian respectively.
 
-The group lost speed and focused on their lives, careers and the Ubuntu version was stale. I will always give credit to Antoni Norman, aka Pinguy for the portion of his code that is included in BohdiBuilder code in release 2.0-1 - Ubuntu. Ubuntu users were demanding an Ubuntu version. In fact, I did receive a threat from one person and multiple demands. I am not an Ubuntu developer. In fact, the only thing I ever created Ubuntu based is:
+The group lost speed and focused on their lives, careers and the Ubuntu version was stale. I will always give credit to Antoni Norman, aka Pinguy for the portion of his code that is included and thank the Bohdi guys for the part based from BohdiBuilder code in release 2.0-1+ Ubuntu. 
+
+Ubuntu users were demanding an Ubuntu version. In fact, I did receive a threat from one person and multiple demands. I am not an Ubuntu developer. In fact, the only thing I ever created Ubuntu based is:
 FixedUbuntu Opty Out for 14.04 - the Sassy Spyware version that did not have an easy option to opt out of spyware.
 
-I saw Pinguy's fork and someone on his forum posted about a Debian version.
-
-Since I had a Debian Version, he had Ubuntu, I thought maybe we could work together but he seemed... less than community minded and unwilling to work with me. 
-
-He told me, "that's not how open source works". 
-
-Really?
-hahaha
-
-So, I was going to use the code for reference following the GPL requirements to ensure no one was confused with respin and his Pinguy (incidentally his includes the original remastersys logos... which is a violation). 
-Then, it came to our attention the xz, UEFI support came from BohdiBuilder! :o
-
-I made some small changes to the source. Other users on github made changes to pinguy - changing the name pinguyOS etc and so, I pushed the changes from the test code I was only evaluating but - because of community - I wrapped up and pushed and packaged out.
-
-Then, the respin project was featured in LinuxJournal and Antoni (Pinguy) contacted us through the website contact form. Yes. I give him credit for the code changes and EFI support. At no time would I say I made those changes. The trail is available in this repo. The source is GPL and we followed the GPL requirements for distribution and modification. 
-
-To Tony - I see why you would abandon this project. It's an important one but comes with a lot of demands, especially maintaining Deb and Ub versions.
-
-To Antoni - I can see why you are disappointed that your product PinguyBuilder was not featured but Respin was. I'm not sure why. Maybe because we offer a Debian and Ubuntu and Mint and Trisquel and other flavor versions. However, your history in the Linux community labled you as - a DMCA lover not a fighter. Simply stated, you do not seem very community minded. 
-
-see also:
-
-<b>Linux Developer Who Issued Bogus YouTube Takedowns Threatens Techdirt With Legal Action For Publishing His 'Private Information'</b>
-https://www.techdirt.com/articles/20150111/10420429671/linux-developer-who-issued-bogus-youtube-takedowns-threatens-techdirt-with-legal-action-publishing-his-private-information.shtml
-
-To the users of Respin or Pinguy - I'm sorry if you think there is some violation or issue here. The drama is not going to effect our future releases. 
-
-Some changes have been pushed and the source for 2.0-2 is available in that dev branch.
+Some changes have been pushed and the source for 2.1.1-1 is available - dev not released.
 
 If you have any questions, please contact us at:
 Contact at linuxrespin.org
-
-Again, I apologize to anyone who felt unduly unrecognized or violated. 
-However, as far as I can tell, I did distinguish respin from pinguy and I even told Antoni, his code was good... that's a compliment.
 
 I'm a copier. It's true. 
 
@@ -63,7 +35,8 @@ I'm a copier. It's true.
 
 Note: Please fork and copy the GPL'd code in any of my repos - That's what it's there for! COPY!!!!!
 
-Respin
+Respin - UPDATING SOON
+Bottom line: to continue supporting Ubuntu version - need contributors!
 
 - a script to create a livecd/dvd from a working Debian install
 
