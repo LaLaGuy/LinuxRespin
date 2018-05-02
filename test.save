@@ -1,0 +1,8 @@
+* Webspark WYSIWYG (webspark_wysiwyg 7.x-1.6-dev)
+* Switched 'css_classes' to 'theme_advanced_styles' in feature.inc file, which fixes bug where WYSIWYG styles
+were broken for new installs
+
+* Webspark Test (webspark_test 7.x-1.0)
+* Moved ASU custom behat tests and steps into this module.
+* Added Behat tests for the ASU DIRS suite and ASU Spotlight module
+
